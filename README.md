@@ -21,18 +21,24 @@ Files are discovered automatically: drop `modules/home/tmux.nix` in and
 `foo/default.nix` (for modules that carry config files with them) are both
 fine. Missing directories are fine too.
 
+## Install Nix
+```sh
+curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
+```
+
 ## First run
 
 Edit the TODOs in `homes/tony.nix` and `modules/home/git.nix`, then:
 
+
 ```sh
-nix run home-manager/release-25.11 -- switch --flake .#tony
+nix run home-manager/release-26.05 -- switch --flake .#tony@work
 ```
 
 After that, `home-manager` is on your PATH, so it's just:
 
 ```sh
-home-manager switch --flake .#tony
+home-manager switch --flake .#tony@work
 ```
 
 ## Writing modules

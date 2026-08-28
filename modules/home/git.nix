@@ -31,10 +31,11 @@
       };
     };
   };
-
+  programs.jjui.enable = true;
   programs.gh.enable = true;
 
   home.packages = with pkgs; [
     difftastic
+    starship-jj
   ];
 }

@@ -52,7 +52,7 @@ in rec {
         then "/Users/${username}"
         else "/home/${username}"
       ),
-    stateVersion ? "25.11",
+    stateVersion ? "26.05",
     modules ? [],
   }:
     home-manager.lib.homeManagerConfiguration {
@@ -98,7 +98,7 @@ in rec {
   # NixOS system, same shape as mkDarwin.
   mkNixos = {
     system ? "x86_64-linux",
-    stateVersion ? "25.11",
+    stateVersion ? "26.05",
     modules ? [],
     homes ? {},
   }:
