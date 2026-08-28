@@ -15,9 +15,11 @@
     # Inline config works too — anything home-manager accepts:
     ({lib, ...}: {
       home.packages = [];
+      home.sessionPath = ["$HOME/.local/bin" "$HOME/.docker/bin"];
       home.shellAliases.nixpkgs = "cd ~/Projects/nixpkgs";
       home.shellAliases.nightingale = "cd ~/Projects/nightingale";
-      programs.git.settings.user.email = lib.mkForce "acastanhiera@hmacademy.com";
+      programs.git.settings.user.email = lib.mkForce "acastanheira@hmacademy.com";
+      programs.jujutsu.settings.user.email = lib.mkForce "acastanheira@hmacademy.com";
     })
   ];
 }

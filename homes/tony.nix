@@ -16,6 +16,7 @@
     {
       home.packages = [];
       home.shellAliases.nixpkgs = "cd ~/Projects/nixpkgs";
+      home.sessionPath = [ "$HOME/.local/bin" ];
     }
   ];
 }
