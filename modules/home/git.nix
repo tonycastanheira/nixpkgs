@@ -4,9 +4,8 @@
     lfs.enable = true;
     settings = {
       user = {
-        # TODO: your name and email
         name = "Tony Castanheira";
-        email = "tony@example.com";
+        email = "antonio.augusto.castanheira@gmail.com";
       };
       init.defaultBranch = "main";
     };
@@ -20,9 +19,8 @@
     enable = true;
     settings = {
       user = {
-        # TODO: your name and email
         name = "Tony Castanheira";
-        email = "tony@example.com";
+        email = "antonio.augusto.castanheira@gmail.com";
       };
       ui = {
         paginate = "never";

@@ -2,6 +2,7 @@
 # module — `pkgs` is stable nixpkgs, `unstable` is nixos-unstable, and
 # `inputs` exposes the flake's inputs if you ever need them.
 {
+  lib,
   pkgs,
   unstable,
   ...
@@ -38,6 +39,15 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    # Stale parent environments (VS Code, tmux, ...) carry the
+    # __HM_SESS_VARS_SOURCED guard from an older generation, which makes
+    # hm-session-vars.sh return before exporting anything new. Clear the
+    # guard and re-source so every interactive shell gets the current vars.
+    initContent = lib.mkOrder 500 ''
+      unset __HM_SESS_VARS_SOURCED __HM_ZSH_SESS_VARS_SOURCED
+      source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
   };
 
   home.shellAliases = {
