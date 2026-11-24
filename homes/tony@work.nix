@@ -13,8 +13,12 @@
     git
 
     # Inline config works too — anything home-manager accepts:
-    ({lib, ...}: {
-      home.packages = [];
+    ({
+      lib,
+      unstable,
+      ...
+    }: {
+      home.packages = [unstable.github-copilot-cli];
       home.sessionPath = ["$HOME/.local/bin" "$HOME/.docker/bin"];
       home.shellAliases.nixpkgs = "cd ~/Projects/nixpkgs";
       home.shellAliases.nightingale = "cd ~/Projects/nightingale";
